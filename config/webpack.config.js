@@ -1,11 +1,13 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const webpack = require("webpack");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname + './../src/index.js'),
   output: {
     path: path.resolve(__dirname + './../dist'),
-    filename: 'multi-select.js'
+    filename: 'multi-select.min.js'
   },
   module: {
     rules: [{
@@ -32,7 +34,24 @@ module.exports = {
       },
     ]
   },
+  mode: "production",
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        warning: "verbose",
+        ecma: 6,
+        beautify: false,
+        compress: true,
+        comments: false,
+        mangle: false,
+        toplevel: false,
+        keep_classnames: true,
+        keep_fnames: true
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
   ]
 }

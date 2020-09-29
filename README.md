@@ -16,4 +16,4 @@ import MultiSelect from "multi-select-vue";
 
 MultiSelect.install(Vue);
 ```
-now you can enjoy it, a customizable multi-select
+now you can enjoy it, a customizable multi-select vue component

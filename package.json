@@ -5,7 +5,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/multi-select.js",
+  "main": "dist/multi-select.min.js",
   "description": "a customizable multi-select plugin build upon vue and element-ui",
   "author": {
     "name": "fengxh",
@@ -35,8 +35,10 @@
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.0",
     "vue-template-compiler": "^2.6.11",
     "webpack-cli": "^3.3.12"
